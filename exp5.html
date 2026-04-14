@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Weather App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .weather-card {
+      background: rgba(255,255,255,0.95);
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+      width: 360px;
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+    .input-group {
+      display: flex;
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      flex: 1;
+      padding: 12px 14px;
+      border: 1px solid #d3d3d3;
+      border-radius: 12px 0 0 12px;
+      font-size: 16px;
+      outline: none;
+    }
+    .input-group button {
+      padding: 12px 18px;
+      border: none;
+      background: #0077ff;
+      color: white;
+      border-radius: 0 12px 12px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .input-group button:hover {
+      background: #005bb5;
+    }
+    .weather-result {
+      margin-top: 16px;
+      text-align: left;
+    }
+    .weather-result p {
+      margin: 12px 0;
+      font-size: 18px;
+    }
+    .error-message {
+      color: #b00020;
+      font-size: 15px;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="weather-card">
+    <h1>Real-Time Weather</h1>
+    <div class="input-group">
+      <input id="cityInput" type="text" placeholder="Enter city name" value="Mumbai">
+      <button id="fetchWeatherBtn">Get Weather</button>
+    </div>
+    <div class="weather-result" id="weatherResult">
+      <p>Temperature: <strong id="tempValue">--</strong> °C</p>
+      <p>Humidity: <strong id="humidityValue">--</strong>%</p>
+      <p>Condition: <strong id="conditionValue">--</strong></p>
+    </div>
+    <p class="error-message" id="errorMessage"></p>
+  </div>
+
+  <script>
+    const apiKey = '06663d05a46e2c4171984ce0d4e82753';
+    const fetchWeatherBtn = document.getElementById('fetchWeatherBtn');
+    const cityInput = document.getElementById('cityInput');
+    const tempValue = document.getElementById('tempValue');
+    const humidityValue = document.getElementById('humidityValue');
+    const conditionValue = document.getElementById('conditionValue');
+    const errorMessage = document.getElementById('errorMessage');
+
+    function updateWeather(result) {
+      tempValue.textContent = result.main.temp.toFixed(1);
+      humidityValue.textContent = result.main.humidity;
+      conditionValue.textContent = result.weather[0].description;
+      errorMessage.textContent = '';
+    }
+
+    function displayError(message) {
+      errorMessage.textContent = message;
+      tempValue.textContent = '--';
+      humidityValue.textContent = '--';
+      conditionValue.textContent = '--';
+    }
+
+    function fetchWeather(city) {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`;
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+          const data = JSON.parse(xhr.responseText);
+          updateWeather(data);
+        } else {
+          const errorData = JSON.parse(xhr.responseText || '{}');
+          displayError(errorData.message || 'Unable to fetch weather data.');
+        }
+      };
+      xhr.onerror = function () {
+        displayError('Network error. Please try again.');
+      };
+      xhr.send();
+    }
+
+    fetchWeatherBtn.addEventListener('click', () => {
+      const city = cityInput.value.trim();
+      if (!city) {
+        displayError('Please enter a city name.');
+        return;
+      }
+      fetchWeather(city);
+    });
+
+    // Fetch weather for the default city on load
+    fetchWeather(cityInput.value.trim());
+  </script>
+</body>
+</html>
