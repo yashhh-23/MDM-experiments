@@ -1,0 +1,35 @@
+/* Custom styles for Nimbus landing page */
+:root{
+--hero-start:#6f42c1;
+--hero-end:#0d6efd;
+}
+body{font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;}
+.hero{
+background: linear-gradient(135deg, var(--hero-start) 0%, var(--hero-end) 100%);
+color: #fff;
+}
+.hero .lead{opacity:0.95}
+.icon{
+width:48px;height:48px;border-radius:8px;display:inline-flex;align-items:center;justify-content:ce
+nter;font-size:1.25rem;
+}
+.card .icon{font-size:1.2rem}
+.badge-pop{
+position:absolute;left:50%;transform:translateX(-50%)
+translateY(-50%);top:0;background:#0d6efd;color:#fff;padding:6px
+12px;border-radius:999px;font-size:0.8rem;box-shadow:0 6px 18px rgba(13,110,253,0.15);
+}
+.popular{border:2px solid rgba(13,110,253,0.12)}
+.card.popular .btn-primary{background:#0d6efd;border-color:#0d6efd}
+footer{background:transparent}
+/* Pricing highlight */
+.popular{transform:scale(1);transition:transform .18s ease, box-shadow .18s ease}
+.popular:hover{transform:translateY(-6px)}
+/* Small screens tweaks */
+
+@media (max-width: 767px){
+.hero{padding-top:3rem;padding-bottom:3rem}
+.badge-pop{position:static;transform:none;margin-bottom:.75rem}
+}
+/* Small decorative rectangle in hero image - ensure contrast */
+svg rect{filter: drop-shadow(0 6px 18px rgba(0,0,0,0.12));}

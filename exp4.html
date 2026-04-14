@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>DOM + jQuery Effects Demo</title> 
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> 
+  <style> 
+    body { 
+      font-family: Arial, sans-serif; 
+      margin: 24px; 
+      background: #f7f7f7; 
+    } 
+ 
+    .card { 
+      max-width: 700px; 
+      border: 1px solid #d9d9d9; 
+      background: #ffffff; 
+      border-radius: 8px; 
+      padding: 18px; 
+    } 
+ 
+    h1 { 
+      margin-top: 0; 
+      color: #222222; 
+    } 
+ 
+    .controls { 
+      display: flex; 
+      flex-wrap: wrap; 
+      gap: 10px; 
+      margin: 14px 0; 
+    } 
+ 
+    button { 
+      padding: 8px 14px; 
+      cursor: pointer; 
+      border: 1px solid #1f5ed6; 
+      background: #2b6fe8; 
+      color: #ffffff; 
+      border-radius: 4px; 
+    } 
+ 
+    button:hover { 
+      background: #245ec4; 
+    } 
+ 
+    #message { 
+      margin: 10px 0; 
+      padding: 10px; 
+      border: 1px solid #cfe0ff; 
+      background: #eef4ff; 
+      border-radius: 4px; 
+    } 
+ 
+    #details { 
+      margin-top: 10px; 
+      padding: 10px; 
+      border: 1px solid #ffe1b4; 
+      background: #fff8eb; 
+      border-radius: 4px; 
+    } 
+ 
+    #box { 
+      width: 120px; 
+      height: 120px; 
+      background: #8ee08e; 
+      border: 1px solid #5ca75c; 
+      margin-top: 16px; 
+      position: relative; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-weight: bold; 
+      border-radius: 6px; 
+    } 
+  </style> 
+</head> 
+<body> 
+  <div class="card"> 
+    <h1>Dynamic Webpage Demo</h1> 
+    <p>Click the buttons to update content and run jQuery effects.</p> 
+ 
+    <div class="controls"> 
+      <button id="updateBtn">Update Content (DOM)</button> 
+      <button id="hideBtn">Hide Box</button> 
+      <button id="showBtn">Show Box</button> 
+      <button id="toggleBtn">Toggle Details</button> 
+      <button id="animateBtn">Animate Box</button> 
+    </div> 
+ 
+    <div id="message">Current message: Welcome!</div> 
+    <div id="details">This section is toggled with jQuery <strong>toggle()</strong>.</div> 
+    <div id="box">BOX</div> 
+  </div> 
+ 
+  <script> 
+    // Plain JavaScript DOM update 
+    const message = document.getElementById("message"); 
+    const updateBtn = document.getElementById("updateBtn"); 
+    let clickCount = 0; 
+ 
+    updateBtn.addEventListener("click", function () { 
+      clickCount++; 
+      message.textContent = "Current message: Button clicked " + clickCount + " time(s)."; 
+    }); 
+ 
+    // jQuery effects 
+    $("#hideBtn").click(function () { 
+      $("#box").hide(400); 
+    }); 
+ 
+    $("#showBtn").click(function () { 
+      $("#box").show(400); 
+    }); 
+ 
+    $("#toggleBtn").click(function () { 
+      $("#details").toggle(400); 
+    }); 
+ 
+    $("#animateBtn").click(function () { 
+      $("#box") 
+        .stop(true) 
+        .animate({ left: "180px", opacity: 0.6, width: "150px", height: "150px" }, 500) 
+        .animate({ left: "0px", opacity: 1, width: "120px", height: "120px" }, 500); 
+    }); 
+  </script> 
+</body> 
+</html> 

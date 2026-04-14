@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nimbus — Simple Product Landing</title>
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Header / Nav -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#">Nimbus</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle
+navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+<li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+<li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<!-- Hero -->
+
+<header class="hero py-5">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6 text-center text-lg-start">
+<h1 class="display-5 fw-bold">Focus on your ideas — let Nimbus handle the rest</h1>
+<p class="lead text-muted">A lightweight toolkit for launching and growing digital
+products fast. Clean UX, simple pricing, and all the essentials you need to ship.</p>
+<div class="d-grid d-sm-flex gap-2 d-lg-block">
+<a href="#pricing" class="btn btn-primary btn-lg me-2">Get started</a>
+<a href="#features" class="btn btn-outline-secondary btn-lg">See features</a>
+</div>
+</div>
+<div class="col-lg-6 mt-4 mt-lg-0 text-center">
+<!-- Simple illustration -->
+<svg width="320" height="220" viewBox="0 0 320 220" fill="none"
+xmlns="http://www.w3.org/2000/svg" class="img-fluid">
+<rect x="10" y="20" width="300" height="180" rx="12" fill="url(#g)" />
+<rect x="28" y="42" width="120" height="20" rx="6" fill="#fff" opacity="0.9" />
+<rect x="28" y="72" width="260" height="18" rx="6" fill="#fff" opacity="0.85" />
+<rect x="28" y="100" width="200" height="16" rx="6" fill="#fff" opacity="0.85" />
+<defs>
+<linearGradient id="g" x1="0" x2="1">
+<stop offset="0%" stop-color="#6f42c1" stop-opacity="1" />
+<stop offset="100%" stop-color="#0d6efd" stop-opacity="1" />
+</linearGradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<!-- Features -->
+<section id="features" class="py-5">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="fw-bold">What Nimbus gives you</h2>
+<p class="text-muted">Small, focused features that combine to make a great product
+experience.</p>
+</div>
+<div class="row g-4">
+<div class="col-md-6 col-lg-4">
+
+<div class="card h-100 border-0 shadow-sm">
+<div class="card-body">
+<div class="icon bg-primary text-white mb-3"><i class="bi bi-gear-fill"></i></div>
+<h5 class="card-title">Easy setup</h5>
+<p class="card-text text-muted small">Templates and sensible defaults so you can go
+from idea to prototype quickly.</p>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 border-0 shadow-sm">
+<div class="card-body">
+<div class="icon bg-success text-white mb-3"><i class="bi
+bi-speedometer2"></i></div>
+<h5 class="card-title">Fast performance</h5>
+<p class="card-text text-muted small">Optimized assets and lean markup for great
+loading times on mobile and desktop.</p>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 border-0 shadow-sm">
+<div class="card-body">
+<div class="icon bg-warning text-dark mb-3"><i class="bi bi-shield-lock-fill"></i></div>
+<h5 class="card-title">Privacy-first</h5>
+<p class="card-text text-muted small">No unnecessary tracking. Data portability and
+simple export tools included.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing -->
+<section id="pricing" class="py-5 bg-light">
+<div class="container">
+<div class="text-center mb-5">
+<h2 class="fw-bold">Simple pricing</h2>
+<p class="text-muted">Pick a plan that fits your stage — upgrade anytime.</p>
+</div>
+
+<div class="row g-4 justify-content-center">
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 text-center shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Starter</h5>
+<p class="h2 fw-bold">$0 <small class="text-muted">/ month</small></p>
+<p class="text-muted small">Great for experiments and early prototypes.</p>
+<ul class="list-unstyled my-3 small">
+<li>1 project</li>
+<li>Basic support</li>
+<li>Community examples</li>
+</ul>
+<a href="#contact" class="btn btn-outline-primary">Sign up</a>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 text-center shadow-sm border-primary popular">
+<div class="badge-pop">Most popular</div>
+<div class="card-body">
+<h5 class="card-title">Growth</h5>
+<p class="h2 fw-bold">$29 <small class="text-muted">/ month</small></p>
+<p class="text-muted small">For teams building and shipping regularly.</p>
+<ul class="list-unstyled my-3 small">
+<li>Up to 10 projects</li>
+<li>Email support</li>
+<li>Export & backups</li>
+</ul>
+<a href="#contact" class="btn btn-primary">Start free trial</a>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 text-center shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Business</h5>
+<p class="h2 fw-bold">$99 <small class="text-muted">/ month</small></p>
+<p class="text-muted small">Advanced controls and priority support.</p>
+<ul class="list-unstyled my-3 small">
+<li>Unlimited projects</li>
+<li>Priority support</li>
+
+<li>Advanced integrations</li>
+</ul>
+<a href="#contact" class="btn btn-outline-primary">Contact sales</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact -->
+<section id="contact" class="py-5">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-8">
+<div class="card shadow-sm border-0">
+<div class="card-body p-4">
+<h3 class="card-title mb-3">Contact us</h3>
+<p class="text-muted small">Have a question or want a demo? Drop us a line.</p>
+<form id="contactForm" class="needs-validation" novalidate>
+<div class="row g-3">
+<div class="col-md-6">
+<label for="name" class="form-label">Name</label>
+<input type="text" class="form-control" id="name" placeholder="Your name"
+
+required>
+
+<div class="invalid-feedback">Please enter your name.</div>
+</div>
+<div class="col-md-6">
+<label for="email" class="form-label">Email</label>
+<input type="email" class="form-control" id="email"
+
+placeholder="you@example.com" required>
+
+<div class="invalid-feedback">Please enter a valid email.</div>
+</div>
+<div class="col-12">
+<label for="message" class="form-label">Message</label>
+<textarea id="message" class="form-control" rows="4" placeholder="Tell us a bit
+
+about your project" required></textarea>
+
+<div class="invalid-feedback">A message helps us respond better.</div>
+</div>
+
+<div class="col-12 d-grid">
+<button class="btn btn-primary btn-lg" type="submit">Send message</button>
+</div>
+</div>
+</form>
+<div id="formAlert" class="alert alert-success mt-3 d-none" role="alert">Thanks —
+we'll get back to you soon.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-4 bg-white border-top">
+<div class="container text-center small text-muted">
+© 2026 Nimbus — made with care. &middot; <a href="#" class="text-muted">Privacy</a>
+</div>
+</footer>
+<!-- Bootstrap JS -->
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Simple client-side validation and fake submit
+(function () {
+'use strict'
+const form = document.getElementById('contactForm');
+const alertBox = document.getElementById('formAlert');
+form.addEventListener('submit', function (event) {
+event.preventDefault();
+event.stopPropagation();
+if (!form.checkValidity()) {
+form.classList.add('was-validated');
+return;
+}
+// Simulate submit
+form.reset();
+form.classList.remove('was-validated');
+alertBox.classList.remove('d-none');
+setTimeout(() => alertBox.classList.add('d-none'), 5000);
+}, false)
+
+})()
+</script>
+</body>
+</html>
