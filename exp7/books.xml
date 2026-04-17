@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+<books>
+  <book>
+    <title>The Pragmatic Programmer</title>
+    <author>Andrew Hunt, David Thomas</author>
+    <price>42.50</price>
+  </book>
+  <book>
+    <title>Clean Code</title>
+    <author>Robert C. Martin</author>
+    <price>38.99</price>
+  </book>
+  <book>
+    <title>Design Patterns</title>
+    <author>Erich Gamma et al.</author>
+    <price>47.25</price>
+  </book>
+  <book>
+    <title>Refactoring</title>
+    <author>Martin Fowler</author>
+    <price>44.00</price>
+  </book>
+  <book>
+    <title>Introduction to Algorithms</title>
+    <author>Thomas H. Cormen et al.</author>
+    <price>59.90</price>
+  </book>
+</books>
