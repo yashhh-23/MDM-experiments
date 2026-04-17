@@ -1,0 +1,51 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+Icon\r
+
+# Node modules
+node_modules/
+
+# PHP dependencies
+vendor/
+composer.lock
+
+# Environment files
+.env
+.env.*
+
+# Logs and runtime files
+*.log
+*.cache
+*.tmp
+*.bak
+
+# IDE/editor folders
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Swap files
+*.swp
+*~
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Temporary/backup files
+*.old
+*.orig
+*.tmp
+
+# Coverage and build artifacts
+coverage/
+dist/
+build/
